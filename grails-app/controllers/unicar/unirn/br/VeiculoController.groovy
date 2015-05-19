@@ -3,8 +3,10 @@ package unicar.unirn.br
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
+@Secured (['ROLE_ADMIN'])
 class VeiculoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -20,7 +22,10 @@ class VeiculoController {
 
     def create() {
         respond new Veiculo(params)
+
+
     }
+
 
     @Transactional
     def save(Veiculo veiculoInstance) {

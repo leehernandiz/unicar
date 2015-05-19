@@ -11,7 +11,7 @@ class Veiculo {
     String comentario
 
     static belongsTo = [Cor, Combustivel, Proprietario]
-    static hasMany = [acessorios: Acessorios, fotos: Fotos]
+    static hasMany = [acessorios: Acessorios, arquivo: Arquivo]
 
     static constraints = {
         modelo nullable: false, blank: false

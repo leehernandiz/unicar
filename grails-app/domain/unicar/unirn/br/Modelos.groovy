@@ -12,6 +12,6 @@ class Modelos {
         descModelo()
 
     }
-    String toString(){ descModelo }
+    String toString(){ descModelo + ' - ' + montadora.descMontadora}
 
 }

@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: corInstance, field: 'descCor', 'error')} required">
+<div class="form-group ${hasErrors(bean: corInstance, field: 'descCor', 'has-error')} required">
 	<label for="descCor">
 		<g:message code="cor.descCor.label" default="Desc Cor" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="descCor" required="" value="${corInstance?.descCor}"/>
+	<g:textField class="form-control" name="descCor" required="" value="${corInstance?.descCor}"/>
 
 </div>
 

@@ -10,7 +10,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <meta name="description" content="">
 	    <meta name="author" content="">
-		<title>Evolucao - <g:layoutTitle default="Grails"/></title>
+		<title>Unicar - <g:layoutTitle default="Grails"/></title>
 		<asset:stylesheet src="application.css"/>
 		<g:layoutHead/>
 	</head>
@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${g.createLink(uri:'/')}">Evolução</a>
+                <a class="navbar-brand" href="${g.createLink(uri:'/')}">Unicar</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -231,7 +231,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="logout.gsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -256,12 +256,17 @@
                         </li>
                         <li>
                             <a class="active" href="${g.createLink(uri:'/')}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
+
 						<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 							<g:if test="${c.fullName?.startsWith("br.com")}">
 								<li><g:link controller="${c.logicalPropertyName}"><i class="fa fa-table fa-fw"></i> ${c.name}</g:link></li>
 							</g:if>
 						</g:each>
+                        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                            <g:if test="${c.fullName?.startsWith("unicar")}">
+                                <li><g:link controller="${c.logicalPropertyName}"><i class="fa fa-table fa-fw"></i> ${c.name}</g:link></li>
+                            </g:if>
+                        </g:each>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -273,6 +278,6 @@
  		</div>
         <!-- /#page-wrapper -->
     </div>
-	<asset:javascript src="application.js"/>	
+	<asset:javascript src="application.js"/>
 	</body>
 </html>

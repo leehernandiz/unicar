@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: combustivelInstance, field: 'descCombustivel', 'error')} required">
+<div class="form-group ${hasErrors(bean: combustivelInstance, field: 'descCombustivel', 'has-error')} required">
 	<label for="descCombustivel">
 		<g:message code="combustivel.descCombustivel.label" default="Desc Combustivel" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="descCombustivel" required="" value="${combustivelInstance?.descCombustivel}"/>
+	<g:textField class="form-control" name="descCombustivel" required="" value="${combustivelInstance?.descCombustivel}"/>
 
 </div>
 

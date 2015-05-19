@@ -3,8 +3,10 @@ package unicar.unirn.br
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
+@Secured (['ROLE_CADASTRO','ROLE_ADMIN'])
 class AcessoriosController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -18,7 +20,9 @@ class AcessoriosController {
         respond acessoriosInstance
     }
 
+
     def create() {
+
         respond new Acessorios(params)
     }
 
