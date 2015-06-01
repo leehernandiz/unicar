@@ -5,8 +5,8 @@ dataSource {
     //driverClassName = "org.h2.Driver"
     driverClassName = "org.postgresql.Driver"
     dialect = "org.hibernate.dialect.PostgreSQLDialect"
-    username = "postgres"
-    password = "unirn"
+    username = "qtfpyfktrpdjkg"
+    password = "pcVWN5RJ2xgmMNd65PcEE6Cqmu"
     //ntlhugo
     //username = "sa"
     //password = ""
@@ -44,7 +44,7 @@ environments {
             dbCreate = "update"
             //ntlhugo
             //url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-            url = "jdbc:postgresql://localhost:5432/unicar"
+            url = "jdbc:postgresql://ec2-54-204-35-248.compute-1.amazonaws.com:5432/d6t074j1h6ag85"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
