@@ -83,3 +83,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: veiculoInstance, field: 'arquivo', 'error')} required">
+    <div class="form-group">
+        <label for="arquivoEnvio">
+            <g:message code="veiculo.arquivo.label" default="Arquivo" />
+            <span class="required-indicator">*</span>
+        </label>
+
+        <g:field type="file" name="arquivoEnvio" class="form-control" />
+
+    </div>
+</div>
+

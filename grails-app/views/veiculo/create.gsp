@@ -39,11 +39,11 @@
 	                	<i class="fa fa-clock-o fa-fw"></i><g:message code="default.create.label" args="[entityName]" />
 		            </div>
 		            <div class="panel-body">
-		            	<g:form url="[resource:veiculoInstance, action:'save']"  role="form">
+		            	<g:uploadForm url="[resource:veiculoInstance, action:'save']"  role="form">
 							<g:render template="form"/>
 							<g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 							<g:link class="btn btn-warning" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link>
-						</g:form>
+						</g:uploadForm>
 		            </div>
 	            </div>
             </div>

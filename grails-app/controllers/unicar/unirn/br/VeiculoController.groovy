@@ -27,6 +27,7 @@ class VeiculoController {
     }
 
 
+
     @Transactional
     def save(Veiculo veiculoInstance) {
         if (veiculoInstance == null) {
@@ -39,7 +40,13 @@ class VeiculoController {
             return
         }
 
-        veiculoInstance.save flush: true
+        def arquivoEnvio = request.getFile("arquivoEnvio")
+        if(!arquivoEnvio.empty){
+            def arquivo = new Arquivo(nome: arquivoEnvio.originalFilename, contentType: arquivoEnvio.contentType, arquivo:arquivoEnvio.getBytes())
+            veiculoInstance.arquivo = arquivo.save(flush:true)
+            veiculoInstance.save flush:true
+        }
+        //veiculoInstance.save flush: true
 
         request.withFormat {
             form multipartForm {

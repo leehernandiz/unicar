@@ -10,8 +10,8 @@ class Veiculo {
     String ano
     String comentario
 
-    static belongsTo = [Cor, Combustivel, Proprietario]
-    static hasMany = [acessorios: Acessorios, arquivo: Arquivo]
+    static belongsTo = [cor:Cor,combustivel: Combustivel, proprietario:Proprietario,arquivo:Arquivo]
+    static hasMany = [acessorios: Acessorios]
 
     static constraints = {
         modelo nullable: false, blank: false
@@ -21,5 +21,6 @@ class Veiculo {
         valor nullable: false, blank: false
         ano nullable: false, blank: false
         comentario nullable: true, blank: true
+        arquivo nullable: true
     }
 }

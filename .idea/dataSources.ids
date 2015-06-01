@@ -1576,6 +1576,15 @@
       <primary-key name="acessorios_pkey" columns="id"/>
       <exported-key name="fk_97qqo08vh6n6jhqs3vqi3m60f" table="veiculo_acessorios" schema="public" catalog="unicar" columns="acessorios_id"/>
     </table>
+    <table name="arquivo" schema="public" catalog="unicar" type="TABLE">
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="version" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="arquivo" sqlType="bytea" precision="2147483647" scale="0" nullable="false" jdbcType="-2"/>
+      <column name="content_type" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nome" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="arquivo_pkey" columns="id"/>
+      <exported-key name="fk_h87jgobraa52pdcfeum567lr6" table="veiculo_arquivo" schema="public" catalog="unicar" columns="arquivo_id"/>
+    </table>
     <table name="combustivel" schema="public" catalog="unicar" type="TABLE">
       <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="version" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -1589,15 +1598,6 @@
       <column name="desc_cor" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="cor_pkey" columns="id"/>
       <exported-key name="fk_rf1c1wggeg30w9fmj8e3f0nxt" table="veiculo" schema="public" catalog="unicar" columns="cor_id"/>
-    </table>
-    <table name="fotos" schema="public" catalog="unicar" type="TABLE">
-      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="version" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="conteudo_imagem" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="image" sqlType="bytea" precision="2147483647" scale="0" nullable="false" jdbcType="-2"/>
-      <column name="nome_imagem" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="fotos_pkey" columns="id"/>
-      <exported-key name="fk_s67c34fcg0n69y7lbffa95wob" table="veiculo_fotos" schema="public" catalog="unicar" columns="fotos_id"/>
     </table>
     <table name="hibernate_sequence" schema="public" catalog="unicar" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -1701,7 +1701,7 @@
       <foreign-key name="fk_5t46igvwvjtwva6c6g1fl3e5n" columns="modelo_id" ref-table="modelos" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_9bumlog4qtgqgq0hd1b422wj5" columns="proprietario_id" ref-table="proprietario" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="fk_duhsxi7qcevubtm2u1fqto2p5" table="veiculo_acessorios" schema="public" catalog="unicar" columns="veiculo_acessorios_id"/>
-      <exported-key name="fk_gqdikqt9iqoqs1q223ymvw595" table="veiculo_fotos" schema="public" catalog="unicar" columns="veiculo_fotos_id"/>
+      <exported-key name="fk_d3fsdsqcy9oorw5rownoar7rx" table="veiculo_arquivo" schema="public" catalog="unicar" columns="veiculo_arquivo_id"/>
     </table>
     <table name="veiculo_acessorios" schema="public" catalog="unicar" type="TABLE">
       <column name="veiculo_acessorios_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
@@ -1709,11 +1709,11 @@
       <foreign-key name="fk_97qqo08vh6n6jhqs3vqi3m60f" columns="acessorios_id" ref-table="acessorios" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_duhsxi7qcevubtm2u1fqto2p5" columns="veiculo_acessorios_id" ref-table="veiculo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
-    <table name="veiculo_fotos" schema="public" catalog="unicar" type="TABLE">
-      <column name="veiculo_fotos_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="fotos_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <foreign-key name="fk_s67c34fcg0n69y7lbffa95wob" columns="fotos_id" ref-table="fotos" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_gqdikqt9iqoqs1q223ymvw595" columns="veiculo_fotos_id" ref-table="veiculo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    <table name="veiculo_arquivo" schema="public" catalog="unicar" type="TABLE">
+      <column name="veiculo_arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <foreign-key name="fk_h87jgobraa52pdcfeum567lr6" columns="arquivo_id" ref-table="arquivo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_d3fsdsqcy9oorw5rownoar7rx" columns="veiculo_arquivo_id" ref-table="veiculo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <procedure name="RI_FKey_cascade_del" schema="pg_catalog" catalog="unicar" type="2" remarks="cmVmZXJlbnRpYWwgaW50ZWdyaXR5IE9OIERFTEVURSBDQVNDQURF">
       <prototype>
