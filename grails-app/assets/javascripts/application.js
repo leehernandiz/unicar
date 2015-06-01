@@ -7,6 +7,7 @@
 //
 //= require jquery
 //= require bootstrap
+//= require select2.min
 //= require_tree .
 //= require_self
 
@@ -53,5 +54,5 @@ var agenda = {
 };
 
 $(document).ready(function(){
-	agenda.init();
+	$("select").select2()
 });

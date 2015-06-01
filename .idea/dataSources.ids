@@ -1583,7 +1583,7 @@
       <column name="content_type" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="nome" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="arquivo_pkey" columns="id"/>
-      <exported-key name="fk_h87jgobraa52pdcfeum567lr6" table="veiculo_arquivo" schema="public" catalog="unicar" columns="arquivo_id"/>
+      <exported-key name="fk_cyjhxriylmd2s21mpacnpb9hq" table="veiculo" schema="public" catalog="unicar" columns="arquivo_id"/>
     </table>
     <table name="combustivel" schema="public" catalog="unicar" type="TABLE">
       <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -1695,25 +1695,20 @@
       <column name="kilometragem" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="km" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="usado" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="veiculo_pkey" columns="id"/>
+      <foreign-key name="fk_cyjhxriylmd2s21mpacnpb9hq" columns="arquivo_id" ref-table="arquivo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_e3kxh8qndt0cchtx50aifktas" columns="combustivel_id" ref-table="combustivel" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_rf1c1wggeg30w9fmj8e3f0nxt" columns="cor_id" ref-table="cor" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_5t46igvwvjtwva6c6g1fl3e5n" columns="modelo_id" ref-table="modelos" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_9bumlog4qtgqgq0hd1b422wj5" columns="proprietario_id" ref-table="proprietario" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="fk_duhsxi7qcevubtm2u1fqto2p5" table="veiculo_acessorios" schema="public" catalog="unicar" columns="veiculo_acessorios_id"/>
-      <exported-key name="fk_d3fsdsqcy9oorw5rownoar7rx" table="veiculo_arquivo" schema="public" catalog="unicar" columns="veiculo_arquivo_id"/>
     </table>
     <table name="veiculo_acessorios" schema="public" catalog="unicar" type="TABLE">
       <column name="veiculo_acessorios_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="acessorios_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <foreign-key name="fk_97qqo08vh6n6jhqs3vqi3m60f" columns="acessorios_id" ref-table="acessorios" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_duhsxi7qcevubtm2u1fqto2p5" columns="veiculo_acessorios_id" ref-table="veiculo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-    </table>
-    <table name="veiculo_arquivo" schema="public" catalog="unicar" type="TABLE">
-      <column name="veiculo_arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <foreign-key name="fk_h87jgobraa52pdcfeum567lr6" columns="arquivo_id" ref-table="arquivo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_d3fsdsqcy9oorw5rownoar7rx" columns="veiculo_arquivo_id" ref-table="veiculo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
     <procedure name="RI_FKey_cascade_del" schema="pg_catalog" catalog="unicar" type="2" remarks="cmVmZXJlbnRpYWwgaW50ZWdyaXR5IE9OIERFTEVURSBDQVNDQURF">
       <prototype>
