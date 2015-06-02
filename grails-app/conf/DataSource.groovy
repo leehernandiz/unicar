@@ -35,7 +35,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
-            url = "jdbc:postgresql://ec2-54-204-35-248.compute-1.amazonaws.com:5432/d8stcn5739osg6"
+            url = "jdbc:postgres://nonyeknekvuimc:BjF4jnRa_o9vV1wVtO6yjriXMP@ec2-54-204-35-248.compute-1.amazonaws.com:5432/d8stcn5739osg6"
             username ="eowjfwqmdejjbl"
             password ="BjF4jnRa_o9vV1wVtO6yjriXMP"
             properties {

@@ -1656,12 +1656,6 @@
       <primary-key name="tipos_veiculo_pkey" columns="id"/>
       <exported-key name="fk_9iasuo9plb97d4htb0fx9ci1r" table="modelos" schema="public" catalog="unicar" columns="tiposveiculo_id"/>
     </table>
-    <table name="tiposveiculo" schema="public" catalog="unicar" type="TABLE">
-      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="version" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="desc_tipo_veiculo" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="tiposveiculo_pkey" columns="id"/>
-    </table>
     <table name="usuario" schema="public" catalog="unicar" type="TABLE">
       <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="version" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -1686,16 +1680,13 @@
       <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="version" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="ano" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="combustivel_id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="comentario" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="cor_id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="modelo_id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="proprietario_id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="valor" sqlType="float4" precision="8" scale="8" nullable="false" jdbcType="7"/>
-      <column name="kilometragem" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="km" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="usado" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="arquivo_id" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="veiculo_pkey" columns="id"/>
       <foreign-key name="fk_cyjhxriylmd2s21mpacnpb9hq" columns="arquivo_id" ref-table="arquivo" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="fk_e3kxh8qndt0cchtx50aifktas" columns="combustivel_id" ref-table="combustivel" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
