@@ -2,8 +2,8 @@ dataSource {
     pooled = true
     pooled = true
     driverClassName = "org.postgresql.Driver"
-    username = "eowjfwqmdejjbl"
-    password = "BjF4jnRa_o9vV1wVtO6yjriXMP"
+    username = "zgzpbutjsizpco"
+    password = "VrznbxkzOYl92nB_d9s6HJk7G9"
     dbCreate = "create-drop"
 }
 hibernate {
@@ -35,9 +35,9 @@ environments {
     production {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
-            url = "jdbc:postgres://nonyeknekvuimc:BjF4jnRa_o9vV1wVtO6yjriXMP@ec2-54-204-35-248.compute-1.amazonaws.com:5432/d8stcn5739osg6"
-            username ="eowjfwqmdejjbl"
-            password ="BjF4jnRa_o9vV1wVtO6yjriXMP"
+            url = "jdbc:postgres://ec2-107-20-152-139.compute-1.amazonaws.com:5432/d75rsd6k9chqta"
+            username ="zgzpbutjsizpco"
+            password ="VrznbxkzOYl92nB_d9s6HJk7G9"
             properties {
                 // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                 jmxEnabled = true
