@@ -7,7 +7,7 @@
 //
 //= require jquery
 //= require bootstrap
-//= require select2.min
+//= require select2
 //= require_tree .
 //= require_self
 
