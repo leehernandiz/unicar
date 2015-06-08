@@ -94,7 +94,8 @@ environments {
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
-	grails.plugins.twitterbootstrap.fixtaglib = true
+grails.assets.minifyJs = false
+grails.plugins.twitterbootstrap.fixtaglib = true
 	
 // log4j configuration
 log4j.main = {
