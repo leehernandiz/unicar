@@ -1,9 +1,7 @@
-package unicar.unirn.br
-
 class Modelos {
     static belongsTo = [Montadora, TiposVeiculo]
-    Montadora montadora
     String descModelo
+    Montadora montadora
     TiposVeiculo tiposveiculo
     static constraints = {
         descModelo nullable: false, blank: false
@@ -12,6 +10,6 @@ class Modelos {
         descModelo()
 
     }
-    //String toString(){ descModelo + ' - ' + montadora.descMontadora}
+    String toString(){ descModelo + '-' + montadora.descMontadora  }
 
 }
