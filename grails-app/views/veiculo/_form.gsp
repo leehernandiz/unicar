@@ -73,7 +73,7 @@
 	<g:select name="acessorios" from="${unicar.unirn.br.Acessorios.list()}" multiple="multiple" optionKey="id" size="5" value="${veiculoInstance?.acessorios*.id}" class="form-control"/>
 
 </div>
-
+<!--
 <div class="form-group ${hasErrors(bean: veiculoInstance, field: 'arquivo', 'has-error')} ">
 	<label for="arquivo">
 		<g:message code="veiculo.arquivo.label" default="Arquivo" />
@@ -82,6 +82,7 @@
 	<g:select name="arquivo" from="${unicar.unirn.br.Arquivo.list()}" multiple="multiple" optionKey="id" size="5" value="${veiculoInstance?.arquivo*.id}" class="form-control"/>
 
 </div>
+-->
 
 <div class="fieldcontain ${hasErrors(bean: veiculoInstance, field: 'arquivo', 'error')} required">
     <div class="form-group">
