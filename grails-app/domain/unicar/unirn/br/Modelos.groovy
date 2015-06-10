@@ -1,3 +1,4 @@
+
 class Modelos {
     static belongsTo = [Montadora, TiposVeiculo]
     String descModelo
