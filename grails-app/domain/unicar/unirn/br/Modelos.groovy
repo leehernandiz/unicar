@@ -11,6 +11,6 @@ class Modelos {
         descModelo()
 
     }
-    String toString(){ descModelo + '-' + montadora.descMontadora  }
+    String toString(){ descModelo + '-' + montadora.descMontadora + '-' + tiposveiculo.descTiposVeiculo }
 
 }
