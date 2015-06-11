@@ -1,3 +1,4 @@
+package unicar.unirn.br
 
 class Modelos {
     static belongsTo = [Montadora, TiposVeiculo]
@@ -11,6 +12,6 @@ class Modelos {
         descModelo()
 
     }
-    String toString(){ descModelo + '-' + montadora.descMontadora + '-' + tiposveiculo.descTiposVeiculo }
+    String toString(){descModelo + ' - ' + montadora.descMontadora}
 
 }
